@@ -31,11 +31,28 @@ export class Player {
         this.levelUp ();
       }
   }
-
-    
+  gainExp(expPoints){
+    let exp = 0;
+    if (expPoints == 1){
+        exp = 5
+    }else if (expPoints == 2){
+        exp = 15
+    }else if (expPoints == 3){
+        exp = 25
+    }else if (expPoints == 4){
+        exp = 35
+    }else{
+      console.log("This option does not exist");
+      return;
+    }
+    this.experience(exp);
+  }
 }
 
 const player1 = new Player("Grog", 4)
 let point1 = Number(prompt("Ingrese puntos ganados: "));
+player1.gainExp(point1);
+
+
 player1.experience(point1);
 player1.info();
